@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/', function()
+// {
+// 	return Redirect::route('login');
+// });
+
+// login
+Route::get('/login', array('uses' => 'AuthController@getLogin', 'as' => 'login'));
+Route::post('login', array('as' => 'login.post', 'uses' => 'AuthController@postLogin'));
+
+Route::get('logout', array('uses' => 'AuthController@getLogout' , 'as' => 'logout' ));
+
+Route::resource('user', 'UsersController');

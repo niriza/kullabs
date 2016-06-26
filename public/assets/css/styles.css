@@ -1,0 +1,14 @@
+.caption {
+    display: block;
+    font-style: italic;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.posright {
+	text-align: right;
+}
+
+/*#po-detail {
+	display: none;
+}*/
