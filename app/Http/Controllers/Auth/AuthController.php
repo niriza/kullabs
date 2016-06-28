@@ -31,6 +31,13 @@ class AuthController extends Controller
     protected $redirectTo = '/';
 
     /**
+     * where to redirect users if not logged in 
+     *
+     * @var string
+     */
+    protected $loginPath = '/login';
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
@@ -68,5 +75,12 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    public function authenticate()
+    {
+        if (Auth::attempt(['username' => $username, 'password' => $password])) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
     }
 }

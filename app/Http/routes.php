@@ -15,15 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/', function()
-// {
-// 	return Redirect::route('login');
-// });
+// Authentication routes...
+Route::get('auth/login', array('uses' => 'Auth\AuthController@getLogin', 'as' => 'login'));
+Route::post('auth/login', array('uses'=> 'Auth\AuthController@postLogin', 'as' => 'login.post'));
+Route::get('auth/logout', array('uses'=>'Auth\AuthController@getLogout','as' => 'logout'));
 
-// login
-Route::get('/login', array('uses' => 'AuthController@getLogin', 'as' => 'login'));
-Route::post('login', array('as' => 'login.post', 'uses' => 'AuthController@postLogin'));
-
-Route::get('logout', array('uses' => 'AuthController@getLogout' , 'as' => 'logout' ));
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::resource('user', 'UsersController');
