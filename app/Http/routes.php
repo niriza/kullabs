@@ -21,7 +21,7 @@ Route::post('auth/login', array('uses'=> 'Auth\AuthController@postLogin', 'as' =
 Route::get('auth/logout', array('uses'=>'Auth\AuthController@logout','as' => 'logout'));
 
 // Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/register', array('uses' => 'Auth\AuthController@getRegister', 'as' => 'getRegister'));
+Route::post('auth/register', array('uses'=>'Auth\AuthController@postRegister', 'as' => 'postRegister'));
 
 Route::resource('user', 'UsersController');

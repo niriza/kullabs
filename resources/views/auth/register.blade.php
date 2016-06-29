@@ -13,7 +13,7 @@
 <?php 
 	$roles = array('Super Admin','Data Entry', 'School Admin', 'Sponsor', 'Marketing Team', 'View Auth Only');
 ?>
-{{ Form::open(array('route' => 'user.store', 'files' => true,  'class' => 'form-horizontal')) }}
+{{ Form::open(array('route' => 'postRegister', 'files' => true,  'class' => 'form-horizontal')) }}
 <div class="row">
     <div class="col-md-6">
         <div class="box box-danger">
