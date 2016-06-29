@@ -20,7 +20,7 @@
             <div class="box-header">
                 <h3 class="box-title">New User</h3>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="padding: 30px">
                 <div class="form-group">
                     <label for="name">Name <em class="labeldanger">*</em></label>
                     {{ Form::text('name', null, array('class'=>'form-control', 'placeholder'=>'Enter Name', 'required')) }}
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <label for="id_role">Role Type<em class="labeldanger">*</em></label>
-                    {{ Form::select('id_role',  $roles, array('class'=>'form-control', 'required')) }}
+                    {{ Form::select('id_role', $roles, null, array('class'=>'form-control', 'required')) }}
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="box-header">
                 <h3 class="box-title">Login Info</h3>
             </div>
-            <div class="box-body">
+            <div class="box-body" style="padding: 30px">
                 <div class="form-group">
                     <label for="name">Username <em class="labeldanger">*</em></label>
                     {{ Form::text('username', null, array('class'=>'form-control', 'placeholder'=>'Enter Username', 'required')) }}
@@ -62,18 +62,16 @@
                     <label for="confirm-password">Confirm Password<em class="labeldanger">*</em></label>
                     {{ Form::password('confirm-password', array('class'=>'form-control', 'placeholder'=>'Renter Password', 'required')) }}
                 </div>
+                <div class="form-actions">
+			        {{ Form::submit('Register', array('class'=>'btn btn-inverse'))}}
+			        <a href="{{ URL::route('user.index') }}" class="btn">Cancel</a>
+				</div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="form-group">
-    <div class="col-sm-4 control-label">
-        {{ Form::submit('Register', array('class'=>'btn btn-lg btn-primary'))}}
-        &nbsp;&nbsp;
-        <a href="{{ URL::route('user.index') }}" class="btn btn-lg btn-primary">Cancel</a>
-    </div>
-</div>
+
 {{ Form::close() }}
 
 
