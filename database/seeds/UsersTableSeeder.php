@@ -14,9 +14,12 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
      	DB::table('users')->insert([	
 	        'name'     => 'Nirija Shrestha',
+            'address'  => 'Kathmandu',
+            'phone'    => '9841234567',
 	        'username' => 'nirija',
 	        'email'    => 'nirija.stha@gmail.com',
 	        'password' => Hash::make('nirija'),
+            'id_role'  => '1'
 	    ]);
     }
 }

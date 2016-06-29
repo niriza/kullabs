@@ -23,11 +23,11 @@
 
         {{ Form::open(array('route' => 'login.post')) }}
           <div class="form-group has-feedback">
-            <input type="username" placeholder="Username" class="form-control">
+            <input type="username" placeholder="Username" name="username" class="form-control">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" placeholder="Password" class="form-control">
+            <input type="password" placeholder="Password" name="password" class="form-control">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">

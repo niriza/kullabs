@@ -36,7 +36,7 @@
 	                      <a href="#" class="btn btn-default btn-flat">Profile</a>
 	                    </div>
 	                    <div class="pull-right">
-	                      {{ Html::linkRoute('auth.logout', 'Sign out', array(), array('class' => 'btn btn-default btn-flat', 'title' => 'Sign out')) }} 
+	                      {{ Html::linkRoute('logout', 'Sign out', array(), array('class' => 'btn btn-default btn-flat', 'title' => 'Sign out')) }} 
 	                    </div>
 	                  </li>
 	                </ul>
