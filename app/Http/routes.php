@@ -25,3 +25,11 @@ Route::get('auth/register', array('uses' => 'Auth\AuthController@getRegister', '
 Route::post('auth/register', array('uses'=>'Auth\AuthController@postRegister', 'as' => 'postRegister'));
 
 Route::resource('user', 'UsersController');
+
+//controller used for RESTful Api
+Route::resource('names', 'NameController', array('before' => 'basic.once'));
+
+// Route::filter('basic.once', function()
+// {
+//     return Auth::onceBasic();
+// });
